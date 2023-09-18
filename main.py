@@ -43,6 +43,7 @@ def menu_loop():
         pygame.draw.rect(window, (0, 0, 255), two_player_button)
         pygame.draw.rect(window, (0, 0, 255), platformer_button)
         pygame.display.update()
+        print('New msg - ', mouse_x_pos, mouse_y_pos)
 
 
 def main_2_player_loop():
@@ -73,6 +74,7 @@ def main_2_player_loop():
         keys_pressed = pygame.key.get_pressed()
         square_movements(red, blue, keys_pressed, obstacles, minutes, seconds)
         players_collide = check_for_square_collision(red, blue)
+        print('New msg 2 - ', mouse_x_pos, mouse_y_pos)
         draw_screen(
             red,
             blue,
