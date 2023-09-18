@@ -1,28 +1,27 @@
 import pygame
-
 # import os
-from random import randint
 
-pygame.font.init()
+import obstacles as obs
+import draw as dr
+import variables as v1
 
-# main variables
-fps = 90
-width = 900
-height = 500
-square_size = 20
-square_speed = 2
-obstacle_count = 25
-obstacle_kills = False
-black = (0, 0, 0)
-
-window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Two Player Pacman")
 
-font = pygame.font.Font("freesansbold.ttf", 15)
-end_font = pygame.font.Font("freesansbold.ttf", 70)
-well_done_font = pygame.font.Font("freesansbold.ttf", 35)
-menu_font = pygame.font.Font("freesansbold.ttf", 40)
+fps = v1.fps
+width = v1.width
+height = v1.height
+square_size = v1.square_size
+square_speed = v1.square_speed
+obstacle_count = v1.obstacle_count
+obstacle_kills = v1.obstacle_kills
+black = v1.black
 
+window = v1.window
+
+font = v1.font
+end_font = v1.end_font
+well_done_font = v1.well_done_font
+menu_font = v1.menu_font
 
 def menu_loop():
     not_chosen = True
@@ -43,13 +42,10 @@ def menu_loop():
         pygame.draw.rect(window, (0, 0, 255), two_player_button)
         pygame.draw.rect(window, (0, 0, 255), platformer_button)
         pygame.display.update()
-        print('Megu msg - ', mouse_x_pos, mouse_y_pos)
-        window.fill((255, 255, 255))
-        not_chosen = False
 
 
 def main_2_player_loop():
-    obstacles = create_obstacles()
+    obstacles = obs.create_obstacles()
     frames = 0
     seconds = 0
     minutes = 0
@@ -76,7 +72,7 @@ def main_2_player_loop():
         keys_pressed = pygame.key.get_pressed()
         square_movements(red, blue, keys_pressed, obstacles, minutes, seconds)
         players_collide = check_for_square_collision(red, blue)
-        draw_screen(
+        dr.draw_screen(
             red,
             blue,
             current_time,
@@ -206,36 +202,6 @@ def finish_game(minutes, seconds, is_red_ded):
     pygame.time.delay(4500)
 
 
-def create_obstacles():
-    obs_position = (square_size, width, square_size, height)
-    obs_dimension = (20, 125, 20, 125)
-    return [create_obstacle(obs_position, obs_dimension) for i in range(obstacle_count)]
 
-
-def create_obstacle(obs_position, obs_dimension):
-    (x_min, x_max, y_min, y_max) = obs_position
-    (w_min, w_max, h_min, h_max) = obs_dimension
-    return pygame.Rect(
-        randint(x_min, x_max),
-        randint(y_min, y_max),
-        randint(w_min, w_max),
-        randint(h_min, h_max),
-    )
-
-
-def draw_screen(red, blue, text, textrect, obstacles):
-    window.fill((255, 255, 255))
-    window.blit(text, textrect)
-    pygame.draw.rect(window, (255, 0, 0), red)
-    pygame.draw.rect(window, (0, 0, 255), blue)
-    # obstacles
-    [draw_rect(obstacle) for obstacle in obstacles]
-    pygame.display.update()
-
-
-def draw_rect(obstacle):
-    pygame.draw.rect(window, black, obstacle)
-
-
-# main_2_player_loop()
-menu_loop()
+main_2_player_loop()
+# menu_loop()
