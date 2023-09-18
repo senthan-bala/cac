@@ -12,8 +12,15 @@ Congressional App Challenge
 8. Open File -> Open Folder, & select C:\Senthan\GitHub\cac
 
 
-### Checkout New Branch
-1. Open Terminal / Command Prompt 
-2. Run - git fetch
-3. Run - git checkout new-branch-name
+### Checkout new branch
+1. Open Terminal / Command Prompt
+2. Run - cd C:\Senthan\GitHub\cac
+3. Run - git fetch
+4. Run - git checkout new-branch-name
+
+
+### Get code from main branch
+1. Open Terminal / Command Prompt
+2. Run - cd C:\Senthan\GitHub\cac
+3. Run - git checkout main
 

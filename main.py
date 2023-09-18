@@ -45,6 +45,7 @@ def menu_loop():
         pygame.display.update()
         print('Megu msg - ', mouse_x_pos, mouse_y_pos)
         window.fill((255, 255, 255))
+        not_chosen = False
 
 
 def main_2_player_loop():
@@ -72,13 +73,9 @@ def main_2_player_loop():
         if seconds > 60:
             minutes += 1
             seconds -= 60
-        if seconds > 120:
-            minutes += 2
-            seconds -= 120
         keys_pressed = pygame.key.get_pressed()
         square_movements(red, blue, keys_pressed, obstacles, minutes, seconds)
         players_collide = check_for_square_collision(red, blue)
-        print('New msg 2 - ', mouse_x_pos, mouse_y_pos)
         draw_screen(
             red,
             blue,
