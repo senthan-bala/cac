@@ -43,7 +43,8 @@ def menu_loop():
         pygame.draw.rect(window, (0, 0, 255), two_player_button)
         pygame.draw.rect(window, (0, 0, 255), platformer_button)
         pygame.display.update()
-        print('New msg - ', mouse_x_pos, mouse_y_pos)
+        print('Megu msg - ', mouse_x_pos, mouse_y_pos)
+        window.fill((255, 255, 255))
 
 
 def main_2_player_loop():
