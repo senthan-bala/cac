@@ -11,3 +11,9 @@ Congressional App Challenge
 7. Open VS Code.
 8. Open File -> Open Folder, & select C:\Senthan\GitHub\cac
 
+
+### Checkout New Branch
+1. Open Terminal / Command Prompt 
+2. Run - git fetch
+3. Run - git checkout new-branch-name
+
