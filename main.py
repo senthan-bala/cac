@@ -70,6 +70,9 @@ def main_2_player_loop():
         if seconds > 60:
             minutes += 1
             seconds -= 60
+        if seconds > 120:
+            minutes += 2
+            seconds -= 120
         keys_pressed = pygame.key.get_pressed()
         square_movements(red, blue, keys_pressed, obstacles, minutes, seconds)
         players_collide = check_for_square_collision(red, blue)
