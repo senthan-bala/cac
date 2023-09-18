@@ -1,1 +1,1 @@
-__all__ = ['draw', 'obstacles', 'variables']
+__all__ = ['draw', 'finish', 'movement', 'obstacles', 'variables']

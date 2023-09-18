@@ -26,3 +26,18 @@ def create_obstacle(obs_position, obs_dimension):
         randint(w_min, w_max),
         randint(h_min, h_max),
     )
+
+
+def check_for_square_collision(obj1, obj2):
+    collide = False
+    if obj1.colliderect(obj2):
+        collide = True
+    return collide
+
+
+def check_for_obj_collision(square, obj_list):
+    collide = False
+    for obj in obj_list:
+        if square.colliderect(obj):
+            collide = True
+    return collide
