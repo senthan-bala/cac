@@ -1,6 +1,11 @@
 # cac
 Congressional App Challenge
 
+### Git Config
+1. git config --global user.name "FIRST_NAME LAST_NAME"
+2. git config --global user.email "MY_NAME@example.com"
+
+
 ### Getting started
 1. Open File Explorer & create a folder for code.
 2. Open Terminal / Command Prompt 
