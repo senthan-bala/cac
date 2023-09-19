@@ -25,7 +25,7 @@ end_font = v1.end_font
 well_done_font = v1.well_done_font
 menu_font = v1.menu_font
 
-pygame.display.set_caption("Two Player Pacman")
+pygame.display.set_caption("Two Player Pacman, CAC project")
 
 def menu_loop():
     not_chosen = True
