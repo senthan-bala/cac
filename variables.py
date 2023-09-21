@@ -9,7 +9,7 @@ square_size = 20
 square_speed = 2
 obstacle_count = 25
 obstacle_kills = False
-
+gamemode_list=["Platformer","Red Chases Blue"]
 finish_wait_time = 3000
 
 # colors
@@ -25,4 +25,5 @@ pygame.font.init()
 font = pygame.font.Font("freesansbold.ttf", 15)
 end_font = pygame.font.Font("freesansbold.ttf", 70)
 well_done_font = pygame.font.Font("freesansbold.ttf", 35)
-menu_font = pygame.font.Font("freesansbold.ttf", 40)
+button_font = pygame.font.Font("freesansbold.ttf", 40)
+go_font = pygame.font.Font("freesansbold.ttf", 30)
